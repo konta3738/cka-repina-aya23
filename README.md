@@ -1,118 +1,128 @@
-# Layer-wise CKA+REPINA Alignment Improves Low-Resource Machine Translation in Aya-23 8B
+# TRepLiNa: Layer-wise CKA + REPINA Alignment for Low-Resource Machine Translation
 
-[Paper Link (ArXiv/ACL Anthology - TBD)](https://arxiv.org/)  
-Official codebase for our paper:
+**TRepLiNa** is named after the first letters of our main authors: **T**oshiki, **R**avi, **L**ena, and **N**icholas 🎉  
 
-> **Layer-wise CKA+REPINA Alignment Improves Low-Resource Machine Translation in Aya-23 8B**
-
-## Abstract
-We study whether enforcing cross-lingual similarity in specific internal layers of a decoder-only multilingual LLM can improve translation quality for low-resource languages (LRLs).  
-Our method combines **Centered Kernel Alignment (CKA)** with **REPINA regularization**, applied layer-wise during QLoRA fine-tuning of Aya-23~8B.  
-Experiments on the **MMLoSo 2025 Shared Task** (Mundari, Santali, Bhili, Gondari ↔ Hindi/English) show that aligning mid-level layers (≈ layer 15) improves BLEU/chrF in data-scarce regimes.
+This repository contains our models and training scripts for **low-resource machine translation (MT)** using **Aya-23 8B** with QLoRA, CKA, and REPINA alignment.  
+We focus on translations for **Bhili→Hindi**, **Santali→English**, and **Mundari→English**.
 
 ---
 
-## 📂 Repository Structure
-cka-repina-aya23/
-│── data/ # Preprocessed MMLoSo splits (not included - see below)
-│── scripts/ # Training / evaluation scripts
-│── models/ # LoRA adapters or checkpoints (uploaded to HF Hub)
-│── results/ # Logs, figures, and tables
-│── main.py # Single-script trainer (QLoRA + CKA + REPINA)
-│── utils.py # Logging, alignment, tokenization helpers
-│── requirements.txt
-│── README.md
+## 📖 Description
 
-yaml
-Code kopieren
+<img width="1780" height="803" alt="cka_repina_diagram_3_cropped" src="https://github.com/user-attachments/assets/5732db37-4dc1-4b4b-9978-2f592f1768e1" />
+
+Low-resource languages often suffer from poor translation quality due to data scarcity and script mismatches.  
+TRepLiNa improves MT by aligning intermediate layers of Aya-23 8B through:
+
+- **CKA (Centered Kernel Alignment):** encourages representational similarity between source and target.
+- **REPINA:** stabilizes representations by preventing drift on high-resource languages.
+- **Layer-wise intervention:** applying alignment at selective layers improves cross-lingual transfer.
 
 ---
 
-## 🚀 Setup
+## 🚀 Models on Hugging Face
 
-### 1. Environment
-```bash
-git clone https://github.com/<your-username>/cka-repina-aya23.git
-cd cka-repina-aya23
-conda create -n cka-repina python=3.10
-conda activate cka-repina
-pip install -r requirements.txt
-Main dependencies:
+You can load our fine-tuned adapters directly:
 
-transformers >= 4.40
+- **Santali → English**
+  - [TRepLiNa (Layer 15)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-santali-english-mmloso-l15-cka001)  
+  - [REPINA only (Layer 15)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-santali-english-mmloso-l15-only-repina)  
+  - [Baseline (NoAlign)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-santali-english-mmloso-base)
 
-peft
+- **Bhili → Hindi**
+  - [TRepLiNa (Layer 15)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-bhili-hindi-mmloso-l15-cka001/settings)  
+  - [REPINA only (Layer 15)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-bhili-hindi-mmloso-l15-only-repina)  
+  - [Baseline (NoAlign)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-bhili-hindi-mmloso-base)
 
-datasets
+- **Mundari → Hindi**
+  - [TRepLiNa (Layer 15)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-mundari-hindi-mmloso-l15-cka001)  
+  - [REPINA only (Layer 15)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-mundari-hindi-mmloso-repina-l15)
+  - [Baseline (NoAlign)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-mundari-hindi-mmloso-base)  
 
-bitsandbytes
+---
 
-sacrebleu
+## 📊 Results
 
-pandas
+### BLEU and chrF++ Scores
 
-torch >= 2.2
+| Language Pair        | Method        | BLEU ↑ | chrF++ ↑ |
+|----------------------|--------------|--------|----------|
+| Santali → English    | NoAlign      | 24.26  | 43.96    |
+|                      | REPINA-only  | 24.64  | 43.74    |
+|                      | CKA+REPINA   | *25.24* | *44.68* |
+| Bhili → Hindi        | NoAlign      | 40.13  | 59.84    |
+|                      | REPINA-only  | *40.26* | *59.65* |
+|                      | CKA+REPINA   | 40.15  | 59.67    |
+| Mundari → English    | NoAlign      | 24.93  | 46.00    |
+|                      | REPINA-only  | 25.08  | 46.02    |
+|                      | CKA+REPINA   | *25.94* | *46.68* |
 
-2. Data
-We use the MMLoSo 2025 shared task dataset.
-Please download from MMLoSo Shared Task Page.
+---
 
-Expected CSV format:
+## 🧩 Usage
 
-Code kopieren
-src_col, tgt_col
-हिंदी वाक्य, भीली अनुवाद
-🧪 Training & Evaluation
-Train with CKA+REPINA (example: Mundari→Hindi, layer 15)
-bash
-Code kopieren
-python main.py \
-  --dataset data/mundari_hindi.csv \
-  --src_lang mundari --tgt_lang hindi \
-  --layer 15 \
-  --lambda_cka 0.05 --mu_repina 0.05 \
-  --output_dir results/mundari_hindi
-Zero-shot evaluation
-bash
-Code kopieren
-python evaluate.py \
-  --dataset data/mundari_hindi.csv \
-  --checkpoint models/aya23_zero
-Few-shot prompts
-We include 1-, 3-, 5-shot prompt templates under prompts/.
+Example: load a fine-tuned adapter with PEFT:
 
-📊 Results (Dev set)
-Language Pair	Zeroshot	Few-shot (5)	CKA+REPINA (ours)	REPINA-only
-Mundari→Hindi	3.54	3.24	34.24	33.45
-Santali→English	1.38	1.16	see paper	see paper
+```python
+from peft import PeftModel
+from transformers import AutoModelForCausalLM
 
-See full tables in Section 5 of the paper.
+base_model = AutoModelForCausalLM.from_pretrained("CohereLabs/aya-23-8B")
+model = PeftModel.from_pretrained(
+    base_model,
+    "tona3738/aya23-8b-qlora-cka-repina-mundari-hindi-mmloso-repina-l15"
+)
+```
+---
 
-📈 Figures
-<p align="center"> <img src="results/mundari_english_exp1.png" width="400"> </p> *Layer sweep: CKA peaks at layer 10; CKA+REPINA peaks at layer 15.*
-🤝 Citation
-If you use this code, please cite:
+## 🛠️ Training
 
-bibtex
-Code kopieren
-@inproceedings{nakai2025cka-repina,
+You can reproduce training with:
+```python
+layer=15
+echo "Running with align_layer=${layer}"
+python aya_qlora_cka_repina.py \
+  --data_csv ./mmloso2025/mundari-train.csv \
+  --src_col Mundari --tgt_col Hindi \
+  --lang_a_name "Mundari" --lang_b_name "Hindi" \
+  --max_source_len 256 --max_target_len 256 \
+  --align_layer $layer \
+  --lambda_cka 0.01 --mu_repina 0.05 \
+  --epochs 5 --batch_size 1 --grad_accum 16 \
+  --lr 2e-4 --warmup_ratio 0.05 \
+  --bf16 \
+  --output_dir ./mundari-hindi-mmloso-l${layer}-cka001 \
+  --prefix mundari-hindi-mmloso-l${layer}-cka001
+```
+---
+## 📄 Citation
+
+If you use TRepLiNa in your research, please cite our paper (to appear):
+```
+@inproceedings{nakai2025treplina,
   title={Layer-wise CKA+REPINA Alignment Improves Low-Resource Machine Translation in Aya-23 8B},
-  author={First Author and Second Author},
-  booktitle={Proceedings of the MMLoSo 2025 Workshop @ IJCNLP-AACL},
+  author={Nakai, Toshiki and Chikkala, Ravi and Oberkircher, Lena Sophie and Jennings, Nicholas and ...},
+  booktitle={Proceedings of the ACL 2025},
   year={2025}
 }
-⚖️ License
-MIT License. See LICENSE file.
+```
+---
+## ✨ Acknowledgments
 
-🔗 Related Repos
-CohereForAI/aya-23
+We thank Saarland University and DFKI for their support.
 
-razdaibiedina/REPINA
-
-kornblith/CKA
-
-yaml
+Also special thanks to Mina Abarico for designing our architecture diagram!
 
 
+---
 
+## Questions
+For any questions, contact one of our main authors:
 
+toshiki3738@gmail.com
+
+rach00004@teams.uni-saarland.de
+
+lenaoberkircher@gmail.com
+
+s8nijenn@stud.uni-saarland.de
