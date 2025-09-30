@@ -9,7 +9,8 @@ We focus on translations for **Bhili→Hindi**, **Santali→English**, and **Mun
 
 ## 📖 Description
 
-<img width="1780" height="803" alt="cka_repina_diagram_3_cropped" src="https://github.com/user-attachments/assets/5732db37-4dc1-4b4b-9978-2f592f1768e1" />
+<img width="1780" height="803" alt="cka_repina_diagram_3_cropped" src="https://github.com/user-attachments/assets/ed947100-7cbc-463f-857f-8ff5e86c7599" />
+
 
 Low-resource languages often suffer from poor translation quality due to data scarcity and script mismatches.  
 TRepLiNa improves MT by aligning intermediate layers of Aya-23 8B through:
