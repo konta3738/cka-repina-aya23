@@ -49,13 +49,13 @@ You can load our fine-tuned adapters directly:
 |----------------------|--------------|--------|----------|
 | Santali → English    | NoAlign      | 24.26  | 43.96    |
 |                      | REPINA-only  | 24.64  | 43.74    |
-|                      | CKA+REPINA   | *25.24* | *44.68* |
+|                      | TRepLiNa     | *25.24* | *44.68* |
 | Bhili → Hindi        | NoAlign      | 40.13  | 59.84    |
 |                      | REPINA-only  | *40.26* | *59.65* |
-|                      | CKA+REPINA   | 40.15  | 59.67    |
+|                      | TRepLiNa     | 40.15  | 59.67    |
 | Mundari → English    | NoAlign      | 24.93  | 46.00    |
 |                      | REPINA-only  | 25.08  | 46.02    |
-|                      | CKA+REPINA   | *25.94* | *46.68* |
+|                      | TRepLiNa     | *25.94* | *46.68* |
 
 ---
 
@@ -111,7 +111,7 @@ If you use TRepLiNa in your research, please cite our paper (to appear):
 
 We thank Saarland University and DFKI for their support.
 
-Also special thanks to Mina Abarico for designing our architecture diagram!
+Also special thanks to Mina Abarico for designing our beautiful architecture diagram!
 
 
 ---
