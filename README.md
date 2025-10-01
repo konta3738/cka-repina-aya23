@@ -116,7 +116,7 @@ Also special thanks to Mina Abarico for designing our beautiful architecture dia
 ---
 
 ## Questions
-For any questions, contact one of our main authors:
+For any questions, contact one of our authors:
 
 toshiki3738@gmail.com
 
@@ -125,3 +125,9 @@ rach00004@teams.uni-saarland.de
 lenaoberkircher@gmail.com
 
 s8nijenn@stud.uni-saarland.de
+
+natalia.skachkova@dfki.de
+
+tatiana.anikina@dfki.de
+
+jalabi@cs.uni-saarland.de
