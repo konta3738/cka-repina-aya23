@@ -1,7 +1,5 @@
 # TRepLiNa: Layer-wise CKA + REPINA Alignment for Low-Resource Machine Translation
 
-**TRepLiNa** is named after the first letters of our main authors: **T**oshiki, **R**avi, **L**ena, and **N**icholas 🎉  
-
 This repository contains our models and training scripts for **low-resource machine translation (MT)** using **Aya-23 8B** with QLoRA, CKA, and REPINA alignment.  
 We focus on translations for **Bhili→Hindi**, **Santali→English**, and **Mundari→English**.
 
