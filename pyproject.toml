@@ -10,7 +10,7 @@ readme = "README.md"
 authors = [
   { name = "Toshiki Nakai", email = "you@example.com" }
 ]
-# ★ SPDX 形式でシンプルに
+# ★ SPDX 形式 simpler
 license = "MIT"
 requires-python = ">=3.9"
 keywords = ["treplina", "cka", "repina", "multilingual", "llm", "aya-23"]
