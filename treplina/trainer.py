@@ -781,17 +781,22 @@ def train(args):
         tokenizer.save_pretrained(args.output_dir)
         print_once(f"Saved final LoRA adapter to {args.output_dir}")
 
-        repo_id = f"tona3738/aya23-8b-qlora-cka-repina-{args.prefix}"
-        local_dir = args.output_dir
+        # HF token がない / 無効な場合はアップロードをスキップ
+        try:
+            repo_id = f"tona3738/aya23-8b-qlora-cka-repina-{args.prefix}"
+            local_dir = args.output_dir
 
-        api = HfApi()
-        api.create_repo(repo_id, private=True, exist_ok=True)   # set private=False if you want it public
-        api.upload_folder(
-            folder_path=local_dir,
-            repo_id=repo_id,
-            commit_message="Upload LoRA adapter (QLoRA + CKA + REPINA^I)."
-        )
-        print(f"Pushed to https://huggingface.co/{repo_id}")
+            api = HfApi()
+            api.create_repo(repo_id, private=True, exist_ok=True)   # set private=False if you want it public
+            api.upload_folder(
+                folder_path=local_dir,
+                repo_id=repo_id,
+                commit_message="Upload LoRA adapter (QLoRA + CKA + REPINA^I)."
+            )
+            print_once(f"Pushed to https://huggingface.co/{repo_id}")
+        except Exception as e:
+            print_once("[treplina] Skipping upload to HuggingFace (no or invalid HF token).")
+            print_once(f"[treplina] HF error: {e}")
 
 def build_argparser():
     p = argparse.ArgumentParser(description="QLoRA fine-tuning of Aya-23 with CKA alignment + REPINA^I drift regularization.")
@@ -833,3 +838,4 @@ def build_argparser():
     p.add_argument("--fp16", action="store_true", help="Use fp16 autocast for speed.")
 
     return p
+
