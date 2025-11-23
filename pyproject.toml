@@ -3,19 +3,19 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "treplina"  # ← これが pip install 名
+name = "treplina"
 version = "0.1.0"
 description = "Layer-wise CKA+REPINA alignment for Aya-23 (TRepLiNa)."
 readme = "README.md"
 authors = [
   { name = "Toshiki Nakai", email = "you@example.com" }
 ]
-license = { file = "LICENSE" }
+# ★ SPDX 形式でシンプルに
+license = "MIT"
 requires-python = ">=3.9"
 keywords = ["treplina", "cka", "repina", "multilingual", "llm", "aya-23"]
 classifiers = [
   "Programming Language :: Python :: 3",
-  "License :: OSI Approved :: MIT License",
   "Operating System :: OS Independent",
 ]
 
@@ -35,3 +35,9 @@ Homepage = "https://github.com/tona3738/cka-repina-aya23"
 
 [project.scripts]
 treplina-train = "treplina.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "."}
+
+[tool.setuptools.packages.find]
+include = ["treplina"]
