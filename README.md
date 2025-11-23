@@ -94,6 +94,50 @@ python aya_qlora_cka_repina.py \
   --prefix mundari-hindi-mmloso-l${layer}-cka001
 ```
 ---
+## 🚀 Train your model using pip
+
+You can fine-tune **any Hugging Face model** with **treplina**, using **any dataset** and **any task**.  
+It is *not* limited to machine translation or Aya-23; it works for classification, dialogue, summarization, alignment, etc.
+
+📌 **Colab Example:**  
+https://colab.research.google.com/drive/1mgQ8ewAuoVZJWL_z_-1BfUR0sOkxUjAw?usp=sharing
+
+📦 **Install treplina:**
+
+```bash
+pip install treplina==0.1.0
+```
+**Example Training Script:**
+```python
+# ====== CONFIG ======
+layer=15
+prefix="mundari-hindi-mmloso-l${layer}-cka001"
+
+echo "Running treplina with prefix=${prefix}  layer=${layer}"
+
+# ====== TRAIN ======
+treplina-train \
+    --data_csv /content/cka-repina-aya23/mundari-toy.csv \
+    --src_col Mundari \
+    --tgt_col Hindi \
+    --lang_a_name Mundari \
+    --lang_b_name Hindi \
+    \
+    --model_id facebook/xglm-564M \
+    --prefix ${prefix} \
+    --output_dir ./output-${prefix} \
+    \
+    --align_layer ${layer} \
+    --lambda_cka 0.01 \
+    --mu_repina 0.05 \
+    \
+    --epochs 1 \
+    --batch_size 1 \
+    --grad_accum 16 \
+    \
+    --bf16
+```
+---
 ## 📄 Citation
 
 If you use TRepLiNa in your research, please cite our paper (to appear):
