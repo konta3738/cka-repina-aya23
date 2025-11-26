@@ -42,9 +42,9 @@ You can load our fine-tuned adapters directly:
 
 ## 📊 Results
 
-### BLEU and chrF++ Scores
+### BLEU and ChrF Scores
 
-| Language Pair        | Method        | BLEU ↑ | chrF++ ↑ |
+| Language Pair        | Method        | BLEU ↑ | ChrF ↑ |
 |----------------------|--------------|-------- |----------|
 | Santali → English    | NoAlign      | 24.26   | 43.96    |
 |                      | REPINA-only  | 24.64   | 43.74    |
