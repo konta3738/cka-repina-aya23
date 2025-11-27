@@ -60,13 +60,13 @@ You can load our fine-tuned adapters directly:
 |                      | Few-shot(1)  | 0.64    | 10.40    |
 |                      | Few-shot(3)  | 0.93    | 10.72    |
 |                      | Few-shot(5)  | 0.35    | 9.38     |
-| Mundari → English    | NoAlign      | 24.93  | 46.00     |
+| Mundari → Hindi      | NoAlign      | 24.93  | 46.00     |
 |                      | REPINA-only  | 25.08  | 46.02     |
 |                      | TRepLiNa     | *25.94* | *46.68*  |
-|                      | Zero-shot    | 0.88    | 10.57    |
-|                      | Few-shot(1)  | 0.64    | 10.40    |
-|                      | Few-shot(3)  | 0.93    | 10.72    |
-|                      | Few-shot(5)  | 0.35    | 9.38     |
+|                      | Zero-shot    | 0.14    | 8.66     |
+|                      | Few-shot(1)  | 0.06    | 7.43     |
+|                      | Few-shot(3)  | 0.04    | 7.48     |
+|                      | Few-shot(5)  | 0.08    | 7.98     |
 
 ---
 
