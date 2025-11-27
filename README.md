@@ -48,7 +48,7 @@ You can load our fine-tuned adapters directly:
 |----------------------|--------------|-------- |----------|
 | Santali → English    | NoAlign      | 24.26   | 43.96    |
 |                      | REPINA-only  | 24.64   | 43.74    |
-|                      | TRepLiNa     | *25.24* | *44.68*  |
+|                      | TRepLiNa     | \textbf{*25.24*} | *44.68*  |
 |                      | Zero-shot    | 0.04    | 3.40     |
 |                      | Few-shot(1)  | 0.04    | 4.39     |
 |                      | Few-shot(3)  | 0.03    | 2.60     |
