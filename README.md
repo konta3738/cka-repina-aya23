@@ -53,8 +53,8 @@ You can load our fine-tuned adapters directly:
 |                      | Few-shot(1)  | 0.04    | 4.39     |
 |                      | Few-shot(3)  | 0.03    | 2.60     |
 |                      | Few-shot(5)  | 0.05    | 2.83     |
-| Bhili → Hindi        | NoAlign      | 40.13   | 59.84    |
-|                      | REPINA-only  | **40.26** | **59.65**  |
+| Bhili → Hindi        | NoAlign      | 40.13   | **59.84**|
+|                      | REPINA-only  | **40.26** | 59.65  |
 |                      | TRepLiNa     | 40.15   | 59.67    |
 |                      | Zero-shot    | 0.88    | 10.57    |
 |                      | Few-shot(1)  | 0.64    | 10.40    |
@@ -62,18 +62,18 @@ You can load our fine-tuned adapters directly:
 |                      | Few-shot(5)  | 0.35    | 9.38     |
 | Mundari → Hindi      | NoAlign      | 24.93  | 46.00     |
 |                      | REPINA-only  | 25.08  | 46.02     |
-|                      | TRepLiNa     | *25.94* | *46.68*  |
+|                      | TRepLiNa     | **25.94** | *46.68*  |
 |                      | Zero-shot    | 0.14    | 8.66     |
 |                      | Few-shot(1)  | 0.06    | 7.43     |
 |                      | Few-shot(3)  | 0.04    | 7.48     |
 |                      | Few-shot(5)  | 0.08    | 7.98     |
 | Godi → Hindi         | NoAlign      | 28.64  | 47.67     |
 |                      | REPINA-only  | 28.44  | 47.78     |
-|                      | TRepLiNa     | *28.714* | *47.58*  |
+|                      | TRepLiNa     | **28.71**| *47.58*  |
 |                      | Zero-shot    | 0.37    | 10.42     |
 |                      | Few-shot(1)  | 0.12    | 8.97      |
-|                      | Few-shot(3)  | 0.30    | 8.93     |
-|                      | Few-shot(5)  | 0.56    | 9.12     |
+|                      | Few-shot(3)  | 0.30    | 8.93      |
+|                      | Few-shot(5)  | 0.56    | 9.12      |
 
 ---
 
