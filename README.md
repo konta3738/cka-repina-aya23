@@ -67,13 +67,13 @@ You can load our fine-tuned adapters directly:
 |                      | Few-shot(1)  | 0.06    | 7.43     |         3.00                  |      
 |                      | Few-shot(3)  | 0.04    | 7.48     |         3.01                  |
 |                      | Few-shot(5)  | 0.08    | 7.98     |         3.24                  |
-| Godi → Hindi         | NoAlign      | 28.64  | 47.67     |
-|                      | REPINA-only  | 28.44  | **47.78** |
-|                      | TRepLiNa     | **28.71**| 47.58   |
-|                      | Zero-shot    | 0.37    | 10.42     |
-|                      | Few-shot(1)  | 0.12    | 8.97      |
-|                      | Few-shot(3)  | 0.30    | 8.93      |
-|                      | Few-shot(5)  | 0.56    | 9.12      |
+| Godi → Hindi         | NoAlign      | 28.64  | 47.67     |         36.25                 |
+|                      | REPINA-only  | 28.44  | **47.78** |         36.18                 | 
+|                      | TRepLiNa     | **28.71**| 47.58   |        **36.26**              |
+|                      | Zero-shot    | 0.37    | 10.42     |         4.39                 |
+|                      | Few-shot(1)  | 0.12    | 8.97      |         3.66                 |
+|                      | Few-shot(3)  | 0.30    | 8.93      |         3.75                 |
+|                      | Few-shot(5)  | 0.56    | 9.12      |         3.99                 |
 
 ---
 
