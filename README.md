@@ -48,13 +48,13 @@ You can load our fine-tuned adapters directly:
 |----------------------|--------------|-------- |----------|
 | Santali → English    | NoAlign      | 24.26   | 43.96    |
 |                      | REPINA-only  | 24.64   | 43.74    |
-|                      | TRepLiNa     | \textbf{*25.24*} | *44.68*  |
+|                      | TRepLiNa     | **25.24**| **44.68**  |
 |                      | Zero-shot    | 0.04    | 3.40     |
 |                      | Few-shot(1)  | 0.04    | 4.39     |
 |                      | Few-shot(3)  | 0.03    | 2.60     |
 |                      | Few-shot(5)  | 0.05    | 2.83     |
 | Bhili → Hindi        | NoAlign      | 40.13   | 59.84    |
-|                      | REPINA-only  | *40.26* | *59.65*  |
+|                      | REPINA-only  | **40.26** | **59.65**  |
 |                      | TRepLiNa     | 40.15   | 59.67    |
 |                      | Zero-shot    | 0.88    | 10.57    |
 |                      | Few-shot(1)  | 0.64    | 10.40    |
