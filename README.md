@@ -161,12 +161,14 @@ treplina-train \
 
 If you use TRepLiNa in your research, please cite our paper (to appear):
 ```
-@inproceedings{nakai2025treplina,
-  title={Layer-wise CKA+REPINA Alignment Improves Low-Resource Machine Translation in Aya-23 8B},
-  author={Nakai, Toshiki and Chikkala, Ravi and Oberkircher, Lena Sophie and Jennings, Nicholas and ...},
-  booktitle={Proceedings of the ACL 2025},
+@article{nakai2025treplina,
+  title={TRepLiNa: Layer-wise CKA+ REPINA Alignment Improves Low-Resource Machine Translation in Aya-23 8B},
+  author={Nakai, Toshiki and Kiran Chikkala, Ravi and Oberkircher, Lena Sophie and Jennings, Nicholas and Skachkova, Natalia and Anikina, Tatiana and Oluwadara Alabi, Jesujoba},
+  journal={arXiv e-prints},
+  pages={arXiv--2510},
   year={2025}
 }
+
 ```
 ---
 ## ✨ Acknowledgments
