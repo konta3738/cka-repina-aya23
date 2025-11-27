@@ -44,15 +44,15 @@ You can load our fine-tuned adapters directly:
 
 ### BLEU and ChrF Scores
 
-| Language Pair        | Method        | BLEU ↑ | ChrF ↑   |
-|----------------------|--------------|-------- |----------|
-| Santali → English    | NoAlign      | 24.26   | 43.96    |
-|                      | REPINA-only  | 24.64   | 43.74    |
-|                      | TRepLiNa     | **25.24**| **44.68**  |
-|                      | Zero-shot    | 0.04    | 3.40     |
-|                      | Few-shot(1)  | 0.04    | 4.39     |
-|                      | Few-shot(3)  | 0.03    | 2.60     |
-|                      | Few-shot(5)  | 0.05    | 2.83     |
+| Language Pair        | Method        | BLEU ↑ | ChrF ↑   |Score = 0.6 × BLEU + 0.4 × ChrF|
+|----------------------|--------------|-------- |----------|-------------------------------|
+| Santali → English    | NoAlign      | 24.26   | 43.96    |      32.14                    |
+|                      | REPINA-only  | 24.64   | 43.74    |      32.28                    |
+|                      | TRepLiNa     | **25.24**| **44.68**  |  **33.02**                 | 
+|                      | Zero-shot    | 0.04    | 3.40     |      1.38                     |                     
+|                      | Few-shot(1)  | 0.04    | 4.39     |      1.77                     |
+|                      | Few-shot(3)  | 0.03    | 2.60     |      1.05                     |
+|                      | Few-shot(5)  | 0.05    | 2.83     |      1.16                     |
 | Bhili → Hindi        | NoAlign      | 40.13   | **59.84**|
 |                      | REPINA-only  | **40.26** | 59.65  |
 |                      | TRepLiNa     | 40.15   | 59.67    |
