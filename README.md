@@ -1,7 +1,7 @@
 # TRepLiNa: Layer-wise CKA + REPINA Alignment for Low-Resource Machine Translation
 
 This repository contains our models and training scripts for **low-resource machine translation (MT)** using **Aya-23 8B** with QLoRA, CKA, and REPINA alignment.  
-We focus on translations for **Bhili→Hindi**,**Gondi→Hindi**, **Santali→English**, and **Mundari→Hindi**.
+We focus on translations for **Bhili→Hindi**,**Gondi→Hindi**, **Santali→English** and **Mundari→Hindi**.
 
 ---
 
@@ -44,7 +44,7 @@ You can load our fine-tuned adapters directly:
 
 ### BLEU and ChrF Scores
 
-| Language Pair        | Method        | BLEU ↑ | ChrF ↑ |
+| Language Pair        | Method        | BLEU ↑ | ChrF ↑   |
 |----------------------|--------------|-------- |----------|
 | Santali → English    | NoAlign      | 24.26   | 43.96    |
 |                      | REPINA-only  | 24.64   | 43.74    |
