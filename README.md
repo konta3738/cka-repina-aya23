@@ -44,7 +44,7 @@ You can load our fine-tuned adapters directly:
 
 ### BLEU and ChrF Scores
 
-| Language Pair        | Method        | BLEU ↑ | ChrF ↑   |Score = 0.6 × BLEU + 0.4 × ChrF|
+| Language Pair        | Method        | BLEU ↑ | ChrF ↑   |MMLoSo Score = 0.6 × BLEU + 0.4 × ChrF|
 |----------------------|--------------|-------- |----------|-------------------------------|
 | Santali → English    | NoAlign      | 24.26   | 43.96    |      32.14                    |
 |                      | REPINA-only  | 24.64   | 43.74    |      32.28                    |
