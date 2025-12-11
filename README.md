@@ -29,7 +29,7 @@ You can load our fine-tuned adapters directly:
   - [Baseline (NoAlign)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-santali-english-mmloso-base)
 
 - **Bhili → Hindi**
-  - [TRepLiNa (Layer 15)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-bhili-hindi-mmloso-l15-cka001/settings)  
+  - [TRepLiNa (Layer 15)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-bhili-hindi-mmloso-l15-cka001)  
   - [REPINA only (Layer 15)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-bhili-hindi-mmloso-l15-only-repina)  
   - [Baseline (NoAlign)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-bhili-hindi-mmloso-base)
 
@@ -37,6 +37,12 @@ You can load our fine-tuned adapters directly:
   - [TRepLiNa (Layer 15)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-mundari-hindi-mmloso-l15-cka001)  
   - [REPINA only (Layer 15)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-mundari-hindi-mmloso-repina-l15)
   - [Baseline (NoAlign)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-mundari-hindi-mmloso-base)  
+
+- **Gondari → Hindi**
+  - [TRepLiNa (Layer 15)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-gondari-hindi-mmloso-l15-cka001)  
+  - [REPINA only (Layer 15)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-gondari-hindi-mmloso-l15-only-repina)  
+  - [Baseline (NoAlign)](https://huggingface.co/tona3738/aya23-8b-qlora-cka-repina-gondari-hindi-mmloso-base)
+
 
 ---
 
