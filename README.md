@@ -5,7 +5,7 @@ We focus on translations for **Bhili→Hindi**,**Gondi→Hindi**, **Santali→En
 
 ---
 
-## 📖 Description
+## Description
 
 <img width="1780" height="803" alt="cka_repina_diagram_3_cropped" src="https://github.com/user-attachments/assets/ed947100-7cbc-463f-857f-8ff5e86c7599" />
 
@@ -19,7 +19,7 @@ TRepLiNa improves MT by aligning intermediate layers of Aya-23 8B through:
 
 ---
 
-## 🚀 Models on Hugging Face
+## Models on Hugging Face
 
 You can load our fine-tuned adapters directly:
 
@@ -46,7 +46,7 @@ You can load our fine-tuned adapters directly:
 
 ---
 
-## 📊 Results
+## Results
 
 ### BLEU and ChrF Scores
 
@@ -119,15 +119,15 @@ python aya_qlora_cka_repina.py \
   --prefix mundari-hindi-mmloso-l${layer}-cka001
 ```
 ---
-## 🚀 Train your model using pip
+## Train your model using pip
 
 You can fine-tune **any Hugging Face model** with **treplina**, using **any dataset** and **any task**.  
 It is *not* limited to machine translation or Aya-23; it works for classification, dialogue, summarization, alignment, etc.
 
-📌 **Colab Example:**  
+**Colab Example:**  
 https://colab.research.google.com/drive/1mgQ8ewAuoVZJWL_z_-1BfUR0sOkxUjAw?usp=sharing
 
-📦 **Install treplina:**
+**Install treplina:**
 
 ```bash
 pip install treplina==0.1.0
@@ -163,7 +163,7 @@ treplina-train \
     --bf16
 ```
 ---
-## 📄 Citation
+## Citation
 
 If you use TRepLiNa in your research, please cite our paper (to appear):
 ```
@@ -196,9 +196,3 @@ rach00004@teams.uni-saarland.de
 lenaoberkircher@gmail.com
 
 s8nijenn@stud.uni-saarland.de
-
-natalia.skachkova@dfki.de
-
-tatiana.anikina@dfki.de
-
-jalabi@cs.uni-saarland.de
