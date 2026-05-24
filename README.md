@@ -83,7 +83,7 @@ You can load our fine-tuned adapters directly:
 
 ---
 
-## 🧩 Usage
+## Usage
 
 Example: load a fine-tuned adapter with PEFT:
 
@@ -99,7 +99,7 @@ model = PeftModel.from_pretrained(
 ```
 ---
 
-## 🛠️ Training
+## Training
 
 You can reproduce training with:
 ```python
@@ -177,7 +177,7 @@ If you use TRepLiNa in your research, please cite our paper (to appear):
 
 ```
 ---
-## ✨ Acknowledgments
+## Acknowledgments
 
 We thank Saarland University and DFKI for their support.
 
